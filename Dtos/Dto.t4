@@ -1,0 +1,41 @@
+﻿<#+
+public void CreateDtos(
+    List<EntityType> entidades, 
+    EntityFrameworkTemplateFileManager fileManager,
+    CodeGenerationTools code,
+    TypeMapper typeMapper,
+    CodeStringGenerator codeStringGenerator
+)
+{
+    foreach (var entity in entidades)
+    {
+        fileManager.StartNewFile(entity.Name + "Dto.cs");
+#>
+//********************************************************
+//* Archivo auto generado para Dto <#=entity.Name #>
+//********************************************************
+namespace <#=code.VsNamespaceSuggestion() #>{
+
+using System;
+using System.Collections.Generic;    
+
+public partial class <#= entity.Name#>:DtoBase
+{
+<#+ 
+        var simpleProperties = typeMapper.GetSimpleProperties(entity);
+        if (simpleProperties.Any())
+        {
+            foreach (var edmProperty in simpleProperties)
+            {
+#>
+        <#=codeStringGenerator.Property(edmProperty)#>
+<#+
+            }
+        }
+#>
+    }
+}
+<#+
+    }
+}
+#>

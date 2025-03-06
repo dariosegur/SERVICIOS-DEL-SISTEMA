@@ -1,0 +1,1278 @@
+﻿
+//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorAdministrativo.svc.cs AdministradorAdministrativo
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorAdministrativo:IAdministradorAdministrativo
+    {
+        public Dtos.Basico.Lista_View_Administrativo getAdministrativos(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Administrativo();
+            try
+            {
+                var negocio = new Negocio.Administracion.Administrativo();
+                respuesta = negocio.getAdministrativos(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddAdministrativo(Dtos.Basico.View_Administrativo newAdministrativo){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Administrativo();
+                respuesta = negocio.AddAdministrativo(newAdministrativo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditAdministrativo(Dtos.Basico.View_Administrativo editAdministrativo){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Administrativo();
+                respuesta = negocio.EditAdministrativo(editAdministrativo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorAdministrativo" CodeBehind="AdministradorAdministrativo.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorAnotacion.svc.cs AdministradorAnotacion
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorAnotacion:IAdministradorAnotacion
+    {
+        public Dtos.Basico.Lista_View_Anotaciones getAnotaciones(long UsuarioId){
+            var respuesta = new Dtos.Basico.Lista_View_Anotaciones();
+            try
+            {
+                var negocio = new Negocio.Administracion.Anotacion();
+                respuesta = negocio.getAnotaciones(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddAnotacion(Dtos.Basico.View_Anotaciones newAnotacion){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Anotacion();
+                respuesta = negocio.AddAnotacion(newAnotacion);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditAnotacion(Dtos.Basico.View_Anotaciones editAnotacion){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Anotacion();
+                respuesta = negocio.EditAnotacion(editAnotacion);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_EstadoAnotacion getEstadosAnotacion(){
+            var respuesta = new Dtos.Basico.Lista_View_EstadoAnotacion();
+            try
+            {
+                var negocio = new Negocio.Administracion.Anotacion();
+                respuesta = negocio.getEstadosAnotacion();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorAnotacion" CodeBehind="AdministradorAnotacion.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorAuxiliar.svc.cs AdministradorAuxiliar
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorAuxiliar:IAdministradorAuxiliar
+    {
+        public Dtos.Basico.Lista_View_Auxiliar getAuxiliares(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Auxiliar();
+            try
+            {
+                var negocio = new Negocio.Administracion.Auxiliar();
+                respuesta = negocio.getAuxiliares(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_Auxiliar_Activo getAuxiliaresActivos(){
+            var respuesta = new Dtos.Basico.Lista_View_Auxiliar_Activo();
+            try
+            {
+                var negocio = new Negocio.Administracion.Auxiliar();
+                respuesta = negocio.getAuxiliaresActivos();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddAuxiliar(Dtos.Basico.View_Auxiliar newAuxiliar){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Auxiliar();
+                respuesta = negocio.AddAuxiliar(newAuxiliar);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditAuxiliar(Dtos.Basico.View_Auxiliar editAuxiliar){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Auxiliar();
+                respuesta = negocio.EditAuxiliar(editAuxiliar);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorAuxiliar" CodeBehind="AdministradorAuxiliar.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorDocente.svc.cs AdministradorDocente
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorDocente:IAdministradorDocente
+    {
+        public Dtos.Basico.Lista_View_Docentes getDocentes(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Docentes();
+            try
+            {
+                var negocio = new Negocio.Administracion.Docente();
+                respuesta = negocio.getDocentes(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddDocente(Dtos.Basico.View_Docente newDocente){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Docente();
+                respuesta = negocio.AddDocente(newDocente);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditDocente(Dtos.Basico.View_Docente editDocente){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Docente();
+                respuesta = negocio.EditDocente(editDocente);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_Facultad getFacultad(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Facultad();
+            try
+            {
+                var negocio = new Negocio.Administracion.Facultad();
+                respuesta = negocio.getFacultad(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_Historial_Docente getHistorialBasico(long UsuarioId, DateTime FechaInicio, DateTime FechaFin){
+            var respuesta = new Dtos.Basico.Lista_View_Historial_Docente();
+            try
+            {
+                var negocio = new Negocio.Administracion.Docente();
+                respuesta = negocio.getHistorialBasico(UsuarioId,FechaInicio,FechaFin);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorDocente" CodeBehind="AdministradorDocente.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorEquipo.svc.cs AdministradorEquipo
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorEquipo:IAdministradorEquipo
+    {
+        public Dtos.Basico.Lista_View_Equipo getEquipos(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Equipo();
+            try
+            {
+                var negocio = new Negocio.Administracion.Equipo();
+                respuesta = negocio.getEquipos(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddEquipo(Dtos.Basico.View_Equipo newEquipo){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Equipo();
+                respuesta = negocio.AddEquipo(newEquipo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditEquipo(Dtos.Basico.View_Equipo editEquipo){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Equipo();
+                respuesta = negocio.EditEquipo(editEquipo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_Historial_Equipo getHistorial(long EquipoId, DateTime FechaInicio, DateTime FechaFin){
+            var respuesta = new Dtos.Basico.Lista_View_Historial_Equipo();
+            try
+            {
+                var negocio = new Negocio.Administracion.Equipo();
+                respuesta = negocio.getHistorial(EquipoId,FechaInicio,FechaFin);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBool IsCodigoInventario(string codigo){
+            var respuesta = new Dtos.DtoBool();
+            try
+            {
+                var negocio = new Negocio.Administracion.Equipo();
+                respuesta = negocio.IsCodigoInventario(codigo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorEquipo" CodeBehind="AdministradorEquipo.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorEstudiante.svc.cs AdministradorEstudiante
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorEstudiante:IAdministradorEstudiante
+    {
+        public Dtos.Basico.Lista_View_Estudiantes getEstudiantes(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Estudiantes();
+            try
+            {
+                var negocio = new Negocio.Administracion.Estudiante();
+                respuesta = negocio.getEstudiantes(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddEstudiante(Dtos.Basico.View_Estudiante newEstudiante){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Estudiante();
+                respuesta = negocio.AddEstudiante(newEstudiante);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditEstudiante(Dtos.Basico.View_Estudiante editEstudiante){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Estudiante();
+                respuesta = negocio.EditEstudiante(editEstudiante);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_Facultad getFacultad(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Facultad();
+            try
+            {
+                var negocio = new Negocio.Administracion.Facultad();
+                respuesta = negocio.getFacultad(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_Historial_Estudiante getHistorialBasico(long UsuarioId, DateTime FechaInicio, DateTime FechaFin){
+            var respuesta = new Dtos.Basico.Lista_View_Historial_Estudiante();
+            try
+            {
+                var negocio = new Negocio.Administracion.Estudiante();
+                respuesta = negocio.getHistorialBasico(UsuarioId,FechaInicio,FechaFin);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorEstudiante" CodeBehind="AdministradorEstudiante.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorFacultad.svc.cs AdministradorFacultad
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorFacultad:IAdministradorFacultad
+    {
+        public Dtos.Basico.Lista_View_Facultad getFacultad(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Facultad();
+            try
+            {
+                var negocio = new Negocio.Administracion.Facultad();
+                respuesta = negocio.getFacultad(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddFacultad(Dtos.Basico.View_Facultad newFacultad){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Facultad();
+                respuesta = negocio.AddFacultad(newFacultad);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditFacultad(Dtos.Basico.View_Facultad editFacultad){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Facultad();
+                respuesta = negocio.EditFacultad(editFacultad);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorFacultad" CodeBehind="AdministradorFacultad.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorMulta.svc.cs AdministradorMulta
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorMulta:IAdministradorMulta
+    {
+        public Dtos.Basico.Lista_View_Multas getMultas(long UsuarioId){
+            var respuesta = new Dtos.Basico.Lista_View_Multas();
+            try
+            {
+                var negocio = new Negocio.Administracion.Multa();
+                respuesta = negocio.getMultas(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddMulta(Dtos.Basico.View_Multas newMulta){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Multa();
+                respuesta = negocio.AddMulta(newMulta);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditMulta(Dtos.Basico.View_Multas editMulta){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Multa();
+                respuesta = negocio.EditMulta(editMulta);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_EstadoMulta getEstadosMulta(){
+            var respuesta = new Dtos.Basico.Lista_View_EstadoMulta();
+            try
+            {
+                var negocio = new Negocio.Administracion.Multa();
+                respuesta = negocio.getEstadosMulta();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorMulta" CodeBehind="AdministradorMulta.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorRestriccion.svc.cs AdministradorRestriccion
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorRestriccion:IAdministradorRestriccion
+    {
+        public Dtos.Basico.Lista_View_Restriccion getRestricciones(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Restriccion();
+            try
+            {
+                var negocio = new Negocio.Administracion.Restriccion();
+                respuesta = negocio.getRestricciones(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddRestriccion(Dtos.Basico.View_Restriccion newRestriccion){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Restriccion();
+                respuesta = negocio.AddRestriccion(newRestriccion);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditarRestriccion(Dtos.Basico.View_Restriccion editaRestriccion){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Restriccion();
+                respuesta = negocio.EditarRestriccion(editaRestriccion);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorRestriccion" CodeBehind="AdministradorRestriccion.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorSede.svc.cs AdministradorSede
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorSede:IAdministradorSede
+    {
+        public Dtos.Basico.Lista_View_Sede getSede(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_Sede();
+            try
+            {
+                var negocio = new Negocio.Administracion.Sede();
+                respuesta = negocio.getSede(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddSede(Dtos.Basico.View_Sede newSede){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Sede();
+                respuesta = negocio.AddSede(newSede);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditSede(Dtos.Basico.View_Sede editSede){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.Sede();
+                respuesta = negocio.EditSede(editSede);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorSede" CodeBehind="AdministradorSede.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Administrador\AdministradorTipoEquipo.svc.cs AdministradorTipoEquipo
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Administrador
+{
+    public class AdministradorTipoEquipo:IAdministradorTipoEquipo
+    {
+        public Dtos.Basico.Lista_View_TiposEquipo getTiposEquipo(string FiltroTexto, bool? Activo){
+            var respuesta = new Dtos.Basico.Lista_View_TiposEquipo();
+            try
+            {
+                var negocio = new Negocio.Administracion.TipoEquipo();
+                respuesta = negocio.getTiposEquipo(FiltroTexto,Activo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Basico.Lista_View_TipoEquipo_Activo getTipoEquiposActivos(){
+            var respuesta = new Dtos.Basico.Lista_View_TipoEquipo_Activo();
+            try
+            {
+                var negocio = new Negocio.Administracion.TipoEquipo();
+                respuesta = negocio.getTipoEquiposActivos();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase AddTipoEquipo(Dtos.Basico.View_TipoEquipo newTipoEquipo){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.TipoEquipo();
+                respuesta = negocio.AddTipoEquipo(newTipoEquipo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EditTipoEquipo(Dtos.Basico.View_TipoEquipo editTipoEquipo){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Administracion.TipoEquipo();
+                respuesta = negocio.EditTipoEquipo(editTipoEquipo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Administrador.AdministradorTipoEquipo" CodeBehind="AdministradorTipoEquipo.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Gestion\CopiasDeSeguridad.svc.cs CopiasDeSeguridad
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Gestion
+{
+    public class CopiasDeSeguridad:ICopiasDeSeguridad
+    {
+        public Dtos.Gestion.InformacionCopiasDeSeguridad getInformacionBackup(long UsuarioId){
+            var respuesta = new Dtos.Gestion.InformacionCopiasDeSeguridad();
+            try
+            {
+                var negocio = new Negocio.Gestion.CopiasDeSeguridad();
+                respuesta = negocio.getInformacionBackup(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase CreateBackup(){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Gestion.CopiasDeSeguridad();
+                respuesta = negocio.CreateBackup();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase RestoreBackup(string file, long UserId){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Gestion.CopiasDeSeguridad();
+                respuesta = negocio.RestoreBackup(file,UserId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Gestion.CopiasDeSeguridad" CodeBehind="CopiasDeSeguridad.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Gestion\InactivarEstudiante.svc.cs InactivarEstudiante
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Gestion
+{
+    public class InactivarEstudiante:IInactivarEstudiante
+    {
+        public Dtos.Gestion.Lista_View_Parametros getParametros(string FiltroTexto, int UsuarioId){
+            var respuesta = new Dtos.Gestion.Lista_View_Parametros();
+            try
+            {
+                var negocio = new Negocio.Gestion.InactivarEstudiante();
+                respuesta = negocio.getParametros(FiltroTexto,UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Gestion.InformacionInactivar getInformacionInactivar(){
+            var respuesta = new Dtos.Gestion.InformacionInactivar();
+            try
+            {
+                var negocio = new Negocio.Gestion.InactivarEstudiante();
+                respuesta = negocio.getInformacionInactivar();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase InactivarEstudiantes(long UsuarioId){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Gestion.InactivarEstudiante();
+                respuesta = negocio.InactivarEstudiantes(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase ActivarEstudiantes(long UsuarioId, long UsuarioIdActivar){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Gestion.InactivarEstudiante();
+                respuesta = negocio.ActivarEstudiantes(UsuarioId,UsuarioIdActivar);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Gestion.InactivarEstudiante" CodeBehind="InactivarEstudiante.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Gestion\Mantenimiento.svc.cs Mantenimiento
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Gestion
+{
+    public class Mantenimiento:IMantenimiento
+    {
+        public Dtos.Gestion.InformacionEliminarEstudiantesInactivos getInformacioneliminarEstudiantes(long UsuarioId){
+            var respuesta = new Dtos.Gestion.InformacionEliminarEstudiantesInactivos();
+            try
+            {
+                var negocio = new Negocio.Gestion.Mantenimiento();
+                respuesta = negocio.getInformacioneliminarEstudiantes(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoBase EliminarEstudiantesInactivos(long UsuarioId){
+            var respuesta = new Dtos.DtoBase();
+            try
+            {
+                var negocio = new Negocio.Gestion.Mantenimiento();
+                respuesta = negocio.EliminarEstudiantesInactivos(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Gestion.Mantenimiento" CodeBehind="Mantenimiento.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Gestion\nactivarEstudiante.svc.svc.cs nactivarEstudiante.svc
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Gestion
+{
+    public class nactivarEstudiante.svc:InactivarEstudiante.svc
+    {
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Gestion.nactivarEstudiante.svc" CodeBehind="nactivarEstudiante.svc.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\PrestamoRecepcion\PrestamoRecepcion.svc.cs PrestamoRecepcion
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.PrestamoRecepcion
+{
+    public class PrestamoRecepcion:IPrestamoRecepcion
+    {
+        public Dtos.Registro.View_PrestamoRecepcion getInfoPrestamoRecepcion(string BarCode){
+            var respuesta = new Dtos.Registro.View_PrestamoRecepcion();
+            try
+            {
+                var negocio = new Negocio.Registro.PrestamoRecepcion();
+                respuesta = negocio.getInfoPrestamoRecepcion(BarCode);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Registro.RestriccionDto getRestriccionesEquipo(string barCodeEquipo){
+            var respuesta = new Dtos.Registro.RestriccionDto();
+            try
+            {
+                var negocio = new Negocio.Registro.PrestamoRecepcion();
+                respuesta = negocio.getRestriccionesEquipo(barCodeEquipo);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Registro.View_EquiposACargo PrestarRecibirEquipo(int usuarioId, int auxiliarId, int? FacultadId, int? SemestreBasico, string barCodeEquipo, bool operacionManual){
+            var respuesta = new Dtos.Registro.View_EquiposACargo();
+            try
+            {
+                var negocio = new Negocio.Registro.PrestamoRecepcion();
+                respuesta = negocio.PrestarRecibirEquipo(usuarioId,auxiliarId,FacultadId,SemestreBasico,barCodeEquipo,operacionManual);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.DtoInt getTimeLogOut(){
+            var respuesta = new Dtos.DtoInt();
+            try
+            {
+                var negocio = new Negocio.Registro.PrestamoRecepcion();
+                respuesta = negocio.getTimeLogOut();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.PrestamoRecepcion.PrestamoRecepcion" CodeBehind="PrestamoRecepcion.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Reportes\DetallePrestamoRecepcion.svc.cs DetallePrestamoRecepcion
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Reportes
+{
+    public class DetallePrestamoRecepcion:IDetallePrestamoRecepcion
+    {
+        public Dtos.Reportes.Lista_View_DetallePrestamoRecepcion getDetallePrestamoRecepcion(DateTime FechaInicial, DateTime FechaFinal, int? FacultadId){
+            var respuesta = new Dtos.Reportes.Lista_View_DetallePrestamoRecepcion();
+            try
+            {
+                var negocio = new Negocio.Reportes.DetallePrestamoRecepcion();
+                respuesta = negocio.getDetallePrestamoRecepcion(FechaInicial,FechaFinal,FacultadId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Reportes.DetallePrestamoRecepcion" CodeBehind="DetallePrestamoRecepcion.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Reportes\Deudores.svc.cs Deudores
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Reportes
+{
+    public class Deudores:IDeudores
+    {
+        public Dtos.Reportes.Lista_View_Deudores getDeudores(){
+            var respuesta = new Dtos.Reportes.Lista_View_Deudores();
+            try
+            {
+                var negocio = new Negocio.Reportes.Deudores();
+                respuesta = negocio.getDeudores();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Reportes.Deudores" CodeBehind="Deudores.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Reportes\EstadisticasPrestamoEquipos.svc.cs EstadisticasPrestamoEquipos
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Reportes
+{
+    public class EstadisticasPrestamoEquipos:IEstadisticasPrestamoEquipos
+    {
+        public Dtos.Reportes.Lista_View_EstadisticasPrestamoEquipos getEstadisticasPrestamoEquipos(DateTime? FechaInicial, DateTime? FechaFinal){
+            var respuesta = new Dtos.Reportes.Lista_View_EstadisticasPrestamoEquipos();
+            try
+            {
+                var negocio = new Negocio.Reportes.EstadisticasPrestamoEquipos();
+                respuesta = negocio.getEstadisticasPrestamoEquipos(FechaInicial,FechaFinal);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Reportes.EstadisticasPrestamoEquipos" CodeBehind="EstadisticasPrestamoEquipos.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Reportes\EstadoMultas.svc.cs EstadoMultas
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Reportes
+{
+    public class EstadoMultas:IEstadoMultas
+    {
+        public Dtos.Reportes.Lista_View_EstadoMultas getEstadoMultas(DateTime? FechaInicial, DateTime? FechaFinal){
+            var respuesta = new Dtos.Reportes.Lista_View_EstadoMultas();
+            try
+            {
+                var negocio = new Negocio.Reportes.EstadoMultas();
+                respuesta = negocio.getEstadoMultas(FechaInicial,FechaFinal);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Reportes.EstadoMultas" CodeBehind="EstadoMultas.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\Seguridad\Seguridad.svc.cs Seguridad
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.Seguridad
+{
+    public class Seguridad:ISeguridad
+    {
+        public Dtos.Seguridad.View_UsuarioAutentica Validar(string User, string Password){
+            var respuesta = new Dtos.Seguridad.View_UsuarioAutentica();
+            try
+            {
+                var negocio = new Negocio.Seguridad();
+                respuesta = negocio.Validar(User,Password);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Seguridad.Lista_View_Menu MenuUsuario(long UsuarioId){
+            var respuesta = new Dtos.Seguridad.Lista_View_Menu();
+            try
+            {
+                var negocio = new Negocio.Seguridad();
+                respuesta = negocio.MenuUsuario(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Seguridad.Lista_View_Menu MenuReportesUsuario(long UsuarioId){
+            var respuesta = new Dtos.Seguridad.Lista_View_Menu();
+            try
+            {
+                var negocio = new Negocio.Seguridad();
+                respuesta = negocio.MenuReportesUsuario(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Seguridad.Lista_View_Menu MenuPrincipalUsuario(long UsuarioId){
+            var respuesta = new Dtos.Seguridad.Lista_View_Menu();
+            try
+            {
+                var negocio = new Negocio.Seguridad();
+                respuesta = negocio.MenuPrincipalUsuario(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+        public Dtos.Seguridad.Lista_View_Menu MenuGestionUsuario(long UsuarioId){
+            var respuesta = new Dtos.Seguridad.Lista_View_Menu();
+            try
+            {
+                var negocio = new Negocio.Seguridad();
+                respuesta = negocio.MenuGestionUsuario(UsuarioId);
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.Seguridad.Seguridad" CodeBehind="Seguridad.csv.cs" %>//C:\Dario\USTA\LabManagerII\02_Fuentes\LabManagerII\Servicios\VisorEquipos\VisorEquipos.svc.cs VisorEquipos
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+using Dtos;
+using Dtos.Basico;
+
+namespace Servicios.VisorEquipos
+{
+    public class VisorEquipos:IVisorEquipos
+    {
+        public Dtos.Basico.Lista_View_Equipo getEquiposPrestados(){
+            var respuesta = new Dtos.Basico.Lista_View_Equipo();
+            try
+            {
+                var negocio = new Negocio.VisorEquipos.VisorEquipos();
+                respuesta = negocio.getEquiposPrestados();
+            }
+            catch (Exception ex)
+            {
+                ErrorServiceHandle.ExtractError(respuesta, ex);
+            }
+            return respuesta;
+        }
+
+    }
+}
+<%@ ServiceHost Language="C#" Debug="true" Service="Servicios.VisorEquipos.VisorEquipos" CodeBehind="VisorEquipos.csv.cs" %>

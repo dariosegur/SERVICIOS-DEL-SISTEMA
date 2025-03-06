@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F6130F5-9ADA-4E10-9EDD-4B5AD7944383}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Datos</RootNamespace>
+    <AssemblyName>Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrativo_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Anotacion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auxiliar_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Constantes.cs" />
+    <Compile Include="Datos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallePrestamoRecepcion_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Docente_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipos_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticasPrestamoEquipos_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoAnotacion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoMulta.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiante_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventoGestion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facultad.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facultades_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Historial_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformacionEliminarEstudiantes_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Gestion\Mapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Mapper\Gestion\ParametroMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Reportes\Mapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Mapper\Basico\EstadoAnotacionMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\EstadoMultaMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\Mapper.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\EquipoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\FacultadMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\RestriccionMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\TipoEquipoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_AdministrativoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_AnotacionesMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_AuxiliarMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_Auxiliar_ActivoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_DocenteMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_EquipoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_EstudianteMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_FacultadMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_HistorialMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_Historial_DocenteMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_Historial_EquipoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_Historial_EstudianteMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_MultasMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_RestriccionMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_RestriccionTipoEquipoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_SedeMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_TipoEquipoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_TipoEquipo_ActivoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Basico\View_UsuarioPrestamoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\MapperBase.cs" />
+    <Compile Include="Mapper\Registro\AnotacionMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Registro\Mapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Mapper\Registro\MultaMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Registro\PrestamoRecepcionMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Registro\View_AnotacionesActivasMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Registro\View_EquiposACargoMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Registro\View_HistorialMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Registro\View_MultasActivasMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Registro\View_PrestamoRecepcionMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Reportes\View_DetallePrestamoRecepcionMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Reportes\View_DeudoresMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Reportes\View_EstadisticasPrestamoEquiposMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Reportes\View_EstadoMultasMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Seguridad\Facultad.cs" />
+    <Compile Include="Mapper\Seguridad\Usuario.cs" />
+    <Compile Include="Mapper\Seguridad\Mapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Mapper\Seguridad\UsuarioMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Seguridad\View_MenuMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Seguridad\View_UsuarioAutenticaMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\Sistema\Mapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Mapper\Sistema\TipoUsuarioMapper.cs">
+      <DependentUpon>Mapper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUsuarioGestion_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUsuarioPrincipal_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUsuarioReportes_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUsuario_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Multa.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Parametro.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamoRecepcion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restriccion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restricciones_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestriccionTipoEquipo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sede.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sedes1_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Split_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoEquipo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoEventoGestion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposEquipo_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoUsuario.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validar_Result.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Administrativo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Anotaciones.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_AnotacionesActivas.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Auxiliar.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Auxiliar_Activo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_CandidatosEliminar.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_DetallePrestamoRecepcion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Deudores.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Docente.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Equipo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_EquiposACargo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_EstadisticasPrestamoEquipos.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_EstadoMultas.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Estudiante.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Facultad.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Historial.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Historial_Docente.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Historial_Equipo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Historial_Estudiante.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Inactivos.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Menu.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Menu_Gestion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Menu_Principal.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Menu_Reportes.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Multas.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_MultasActivas.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_PrestamoRecepcion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Restriccion.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_RestriccionTipoEquipo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Sede.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_TipoEquipo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_TipoEquipo_Activo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_UsuarioAutentica.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_UsuarioPrestamo.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Datos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Datos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Datos.edmx.diagram">
+      <DependentUpon>Datos.edmx</DependentUpon>
+    </None>
+    <None Include="Mapper\MainTemplate.t4" />
+    <None Include="Mapper\Mapper.t4" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Datos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Datos.edmx</DependentUpon>
+      <LastGenOutput>Datos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Datos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Datos.edmx</DependentUpon>
+      <LastGenOutput>Datos.cs</LastGenOutput>
+    </Content>
+    <Content Include="Mapper\Gestion\Mapper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Mapper.cs</LastGenOutput>
+    </Content>
+    <Content Include="Mapper\Reportes\Mapper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Mapper.cs</LastGenOutput>
+    </Content>
+    <Content Include="Mapper\Basico\Mapper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Mapper.cs</LastGenOutput>
+    </Content>
+    <Content Include="Mapper\Registro\Mapper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Mapper.cs</LastGenOutput>
+    </Content>
+    <Content Include="Mapper\Seguridad\Mapper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Mapper.cs</LastGenOutput>
+    </Content>
+    <Content Include="Mapper\Sistema\Mapper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Mapper.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dtos\Dtos.csproj">
+      <Project>{5702a70c-ada0-4b54-9fee-290df972f07a}</Project>
+      <Name>Dtos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

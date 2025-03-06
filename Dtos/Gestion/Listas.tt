@@ -1,0 +1,32 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#
+    Lista[] Listas=new Lista[]{
+			new Lista{EspacioDeNombres="Gestion", Clase="Parametros", TipoItem="Gestion.Parametro"},
+        };
+#>
+using System.Collections.Generic;
+<#
+    foreach(var l in Listas)
+    {
+        #>
+namespace Dtos.<#=l.EspacioDeNombres #>
+{
+    public class Lista_View_<#=l.Clase #> : DtoBase
+    {
+        public List<Dtos.<#=l.TipoItem #>> Items { get; set; }
+    }
+}
+<#    }
+ #>
+<#+
+    class Lista{
+        public string EspacioDeNombres{get;set;}
+        public string Clase{get;set;}
+        public string TipoItem{get;set;}
+    }
+ #>

@@ -1,0 +1,9 @@
+﻿//SELECT *, '"'+TABLE_NAME+'",' FROM INFORMATION_SCHEMA.TABLES order by 2
+<#    
+    string[]  Entidades={
+        "View_Deudores",
+		"View_DetallePrestamoRecepcion",
+		"View_EstadisticasPrestamoEquipos",
+		"View_EstadoMultas"
+        };#>
+<#@ include file="../MainTemplate.t4"#>

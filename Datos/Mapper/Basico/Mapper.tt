@@ -1,0 +1,31 @@
+﻿//SELECT *, '"'+TABLE_NAME+'",' FROM INFORMATION_SCHEMA.TABLES order by 2
+<#    
+    string[]  Entidades={
+        "View_UsuarioPrestamo",
+        "Restriccion",
+        "View_TipoEquipo",
+        "TipoEquipo",
+        "Facultad",
+        "Facultades",
+        "View_Facultad",
+        "Equipo",
+        "View_Estudiante",
+        "View_Docente",
+        "View_Multas",
+        "EstadoMulta",
+        "View_Anotaciones",
+        "View_Historial_Estudiante",
+        "View_Historial_Docente",
+        "View_Historial_Equipo",
+        "View_Historial",
+        "EstadoAnotacion",
+        "View_Auxiliar",
+        "View_Administrativo",
+        "View_Equipo",
+        "View_TipoEquipo_Activo",
+        "View_Auxiliar_Activo",
+		"View_Sede",
+		"View_Restriccion",
+        "View_RestriccionTipoEquipo"
+        };#>
+<#@ include file="../MainTemplate.t4"#>

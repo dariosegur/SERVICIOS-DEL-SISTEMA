@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5cf69ebebdd24e2a950f4d00a548c644" Name="Diagram1" ZoomLevel="124">
+        <EntityTypeShape EntityType="LabManagerModel.Equipo" Width="1.5" PointX="7.5" PointY="19.375" />
+        <EntityTypeShape EntityType="LabManagerModel.Facultad" Width="1.5" PointX="5.25" PointY="34.5" />
+        <EntityTypeShape EntityType="LabManagerModel.TipoEquipo" Width="1.5" PointX="5.25" PointY="17.125" />
+        <EntityTypeShape EntityType="LabManagerModel.Anotacion" Width="2" PointX="10.25" PointY="18.875" />
+        <EntityTypeShape EntityType="LabManagerModel.Multa" Width="1.5" PointX="5.25" PointY="9" />
+        <EntityTypeShape EntityType="LabManagerModel.PrestamoRecepcion" Width="1.5" PointX="9.75" PointY="24.875" />
+        <EntityTypeShape EntityType="LabManagerModel.Usuario" Width="1.5" PointX="3" PointY="15.875" />
+        <EntityTypeShape EntityType="LabManagerModel.TipoUsuario" Width="1.5" PointX="0.75" PointY="19.875" />
+        <AssociationConnector Association="LabManagerModel.FK_Equipo_TipoEquipo" />
+        <AssociationConnector Association="LabManagerModel.FK_Equipo_Usuario" />
+        <AssociationConnector Association="LabManagerModel.FK_Equipo_Usuario1" />
+        <AssociationConnector Association="LabManagerModel.FK_PrestamoRecepcion_Equipo" />
+        <AssociationConnector Association="LabManagerModel.FK_Facultad_Usuario" />
+        <AssociationConnector Association="LabManagerModel.FK_Facultad_Usuario1" />
+        <AssociationConnector Association="LabManagerModel.FK_PrestamoRecepcion_Facultad" />
+        <AssociationConnector Association="LabManagerModel.FK_Usuario_Facultad" />
+        <AssociationConnector Association="LabManagerModel.FK_TipoEquipo_Usuario" />
+        <AssociationConnector Association="LabManagerModel.FK_TipoEquipo_Usuario1" />
+        <AssociationConnector Association="LabManagerModel.FK_Anotacion_Usuario" />
+        <AssociationConnector Association="LabManagerModel.FK_Anotacion_Usuario1" />
+        <AssociationConnector Association="LabManagerModel.FK_Anotacion_Usuario2" />
+        <AssociationConnector Association="LabManagerModel.FK_Multa_Usuario" />
+        <AssociationConnector Association="LabManagerModel.FK_Multa_Usuario1" />
+        <AssociationConnector Association="LabManagerModel.FK_Multa_Usuario2" />
+        <AssociationConnector Association="LabManagerModel.FK_PrestamoRecepcion_Usuario" />
+        <AssociationConnector Association="LabManagerModel.FK_PrestamoRecepcion_Usuario1" />
+        <AssociationConnector Association="LabManagerModel.FK_Usuario_TipoUsuario" />
+        <AssociationConnector Association="LabManagerModel.FK_Usuario_Usuario" />
+        <AssociationConnector Association="LabManagerModel.FK_Usuario_Usuario1" />
+        <EntityTypeShape EntityType="LabManagerModel.Restriccion" Width="1.5" PointX="5.25" PointY="13.125" />
+        <EntityTypeShape EntityType="LabManagerModel.View_AnotacionesActivas" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_MultasActivas" Width="1.625" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_TipoEquipo" Width="1.875" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_UsuarioPrestamo" Width="1.5" PointX="3.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_EquiposACargo" Width="2.25" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_PrestamoRecepcion" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Estudiante" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Historial" Width="1.5" PointX="9.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LabManagerModel.EstadoMulta" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Facultad" Width="1.75" PointX="10.75" PointY="3.625" />
+        <EntityTypeShape EntityType="LabManagerModel.View_UsuarioAutentica" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Multas" Width="1.5" PointX="11.75" PointY="11.75" />
+        <EntityTypeShape EntityType="LabManagerModel.EstadoAnotacion" Width="2.125" PointX="7.375" PointY="5.875" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Anotaciones" Width="1.75" PointX="12.75" PointY="0.75" />
+        <AssociationConnector Association="LabManagerModel.FK_Anotacion_Anotacion" />
+        <AssociationConnector Association="LabManagerModel.FK_Anotacion_EstadoAnotacion" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Historial_Estudiante" Width="1.5" PointX="13.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Docente" Width="1.5" PointX="13.75" PointY="9.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Historial_Docente" Width="1.5" PointX="13.75" PointY="14.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Administrativo" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Auxiliar" Width="1.5" PointX="15.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Auxiliar_Activo" Width="2.5" PointX="15.75" PointY="10.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_TipoEquipo_Activo" Width="2.75" PointX="15.75" PointY="15.75" />
+        <AssociationConnector Association="LabManagerModel.FK_Equipo_Responsable" />
+        <EntityTypeShape EntityType="LabManagerModel.Menu" Width="1.5" PointX="5.25" PointY="30.375" />
+        <AssociationConnector Association="LabManagerModel.FK_Menu_Usuario_Crea" />
+        <AssociationConnector Association="LabManagerModel.FK_Menu_Usuario_Modifica" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Menu" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LabManagerModel.Sede" Width="1.5" PointX="5.25" PointY="26.875" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Sede" Width="1.5" PointX="17.75" PointY="4.75" />
+        <AssociationConnector Association="LabManagerModel.FK_Sede_Usuario_Creado" />
+        <AssociationConnector Association="LabManagerModel.FK_Sede_Usuario_Modificado" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Restriccion" Width="1.5" PointX="18.75" PointY="8.75" />
+        <AssociationConnector Association="LabManagerModel.FK_Restriccion_Restriccion_Modifica" />
+        <AssociationConnector Association="LabManagerModel.FK_Restriccion_Usuario_Crea" />
+        <EntityTypeShape EntityType="LabManagerModel.RestriccionTipoEquipo" Width="1.5" PointX="7.5" PointY="15.5" />
+        <AssociationConnector Association="LabManagerModel.FK_RestriccionTipoEquipo_Restriccion" />
+        <AssociationConnector Association="LabManagerModel.FK_RestriccionTipoEquipo_TipoEquipo" />
+        <EntityTypeShape EntityType="LabManagerModel.View_RestriccionTipoEquipo" Width="1.5" PointX="19.375" PointY="12.75" />
+        <AssociationConnector Association="LabManagerModel.FK_Facultad_Sede" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Historial_Equipo" Width="1.5" PointX="19.375" PointY="15.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Deudores" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Menu_Reportes" Width="1.5" PointX="20.375" PointY="4.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Menu_Principal" Width="1.5" PointX="13.375" PointY="20.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_DetallePrestamoRecepcion" Width="1.5" PointX="15.375" PointY="20.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Menu_Gestion" Width="1.5" PointX="17.375" PointY="20.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_EstadisticasPrestamoEquipos" Width="1.5" PointX="19.375" PointY="20.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Equipo" Width="1.5" PointX="21.375" PointY="8.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_EstadoMultas" Width="1.5" PointX="21.375" PointY="14.75" />
+        <EntityTypeShape EntityType="LabManagerModel.Parametro" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="LabManagerModel.EventoGestion" Width="1.5" PointX="5.25" PointY="21.875" />
+        <EntityTypeShape EntityType="LabManagerModel.TipoEventoGestion" Width="1.5" PointX="3" PointY="27.125" />
+        <AssociationConnector Association="LabManagerModel.FK_EventoGestion_EventoGestion" />
+        <AssociationConnector Association="LabManagerModel.FK_EventoGestion_Usuario" />
+        <EntityTypeShape EntityType="LabManagerModel.View_CandidatosEliminar" Width="1.5" PointX="21.375" PointY="19.75" />
+        <EntityTypeShape EntityType="LabManagerModel.View_Inactivos" Width="1.5" PointX="22.375" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,57 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#
+    Lista[] Listas=new Lista[]{
+        new Lista{EspacioDeNombres="Basico", Clase="Anotaciones", TipoItem="Basico.View_Anotaciones"},
+        new Lista{EspacioDeNombres="Basico", Clase="EstadoMulta", TipoItem="Basico.EstadoMulta"},
+        new Lista{EspacioDeNombres="Basico", Clase="Estudiantes", TipoItem="Basico.View_Estudiante"},
+        new Lista{EspacioDeNombres="Basico", Clase="Docentes", TipoItem="Basico.View_Docente"},
+        new Lista{EspacioDeNombres="Basico", Clase="Facultad", TipoItem="Basico.View_Facultad"},
+        new Lista{EspacioDeNombres="Basico", Clase="Multas", TipoItem="Basico.View_Multas"},
+        new Lista{EspacioDeNombres="Basico", Clase="EstadoAnotacion", TipoItem="Basico.EstadoAnotacion"},
+        new Lista{EspacioDeNombres="Basico", Clase="Historial_Equipo", TipoItem="Basico.View_Historial_Equipo"},
+        new Lista{EspacioDeNombres="Basico", Clase="Historial_Estudiante", TipoItem="Basico.View_Historial_Estudiante"},
+        new Lista{EspacioDeNombres="Basico", Clase="Historial_Docente", TipoItem="Basico.View_Historial_Docente"},
+        new Lista{EspacioDeNombres="Basico", Clase="Historial", TipoItem="Basico.View_Historial"},
+        new Lista{EspacioDeNombres="Basico", Clase="TiposEquipo", TipoItem="Basico.View_TipoEquipo"},
+        new Lista{EspacioDeNombres="Basico", Clase="Sede", TipoItem="Basico.View_Sede"},
+
+        new Lista{EspacioDeNombres="Basico", Clase="Auxiliar", TipoItem="Basico.View_Auxiliar"},
+        new Lista{EspacioDeNombres="Basico", Clase="Administrativo", TipoItem="Basico.View_Administrativo"},
+        new Lista{EspacioDeNombres="Basico", Clase="Equipo", TipoItem="Basico.View_Equipo"},
+        
+        new Lista{EspacioDeNombres="Basico", Clase="TipoEquipo_Activo", TipoItem="Basico.View_TipoEquipo_Activo"},
+        new Lista{EspacioDeNombres="Basico", Clase="Auxiliar_Activo", TipoItem="Basico.View_Auxiliar_Activo"},
+
+        new Lista{EspacioDeNombres="Basico", Clase="Restriccion", TipoItem="Basico.View_Restriccion"},
+        new Lista{EspacioDeNombres="Basico", Clase="RestriccionTipoEquipo", TipoItem="Basico.View_RestriccionTipoEquipo"},
+
+		
+		
+        };
+#>
+using System.Collections.Generic;
+<#
+    foreach(var l in Listas)
+    {
+        #>
+namespace Dtos.<#=l.EspacioDeNombres #>
+{
+    public class Lista_View_<#=l.Clase #> : DtoBase
+    {
+        public List<Dtos.<#=l.TipoItem #>> Items { get; set; }
+    }
+}
+<#    }
+ #>
+<#+
+    class Lista{
+        public string EspacioDeNombres{get;set;}
+        public string Clase{get;set;}
+        public string TipoItem{get;set;}
+    }
+ #>

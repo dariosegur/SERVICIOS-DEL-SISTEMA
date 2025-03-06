@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5702A70C-ADA0-4B54-9FEE-290DF972F07A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dtos</RootNamespace>
+    <AssemblyName>Dtos</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DtoInt.cs" />
+    <Compile Include="DtoBool.cs" />
+    <Compile Include="Gestion\Dto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Gestion\InformacionEliminarEstudiantesInactivos.cs" />
+    <Compile Include="Gestion\InformacionCopiasDeSeguridad.cs" />
+    <Compile Include="Gestion\Listas.cs">
+      <DependentUpon>Listas.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Gestion\ParametroDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\InformacionInactivar.cs" />
+    <Compile Include="Reportes\Dto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\Listas.cs">
+      <DependentUpon>Listas.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\View_DetallePrestamoRecepcionDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\View_DeudoresDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\Dto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\EquipoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\EstadoAnotacionDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\EstadoMultaDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\FacultadDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\Listas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\RestriccionDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\TipoEquipoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_AdministrativoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_AnotacionesDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_AuxiliarDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_Auxiliar_ActivoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_DocenteDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_Historial_EquipoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_TipoEquipo.cs" />
+    <Compile Include="Basico\View_EquipoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_EstudianteDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_FacultadDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_HistorialDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_Historial_DocenteDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_Historial_EstudianteDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_MultasDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_RestriccionDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_RestriccionTipoEquipoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_SedeDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_TipoEquipoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_TipoEquipo_ActivoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Basico\View_UsuarioPrestamoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DtoBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro\AnotacionDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\Lista_View_Historial.cs" />
+    <Compile Include="Registro\MultaDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\PrestamoRecepcionDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\View_AnotacionesActivasDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\Restriccion.cs" />
+    <Compile Include="Registro\View_EquiposACargoDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\View_HistorialDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\View_MultasActivasDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\View_EquiposACargo.cs" />
+    <Compile Include="Registro\View_PrestamoRecepcionDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\View_EstadisticasPrestamoEquiposDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\View_EstadoMultasDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\Lista_View_Menu.cs" />
+    <Compile Include="Seguridad\UsuarioDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\View_MenuDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\View_UsuarioAutenticaDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Dto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Seguridad\Dto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Registro\Dto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\EstadoMultaDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\TipoUsuarioDto.cs">
+      <DependentUpon>Dto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\View_PrestamoRecepcion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MainTemplate.t4" />
+    <None Include="Dto.t4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Gestion\Dto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Dto.cs</LastGenOutput>
+    </Content>
+    <Content Include="Gestion\Listas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Listas.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reportes\Dto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Dto.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reportes\Listas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Listas.cs</LastGenOutput>
+    </Content>
+    <Content Include="Basico\Dto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Dto.cs</LastGenOutput>
+    </Content>
+    <Content Include="Basico\Listas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Listas.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sistema\Dto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Dto.cs</LastGenOutput>
+    </Content>
+    <Content Include="Seguridad\Dto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Dto.cs</LastGenOutput>
+    </Content>
+    <Content Include="Registro\Dto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Dto.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

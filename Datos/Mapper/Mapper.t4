@@ -1,0 +1,59 @@
+﻿<#+
+public void CreateMapper(
+    List<EntityType> entidades, 
+    EntityFrameworkTemplateFileManager fileManager,
+    CodeGenerationTools code,
+    TypeMapper typeMapper,
+    CodeStringGenerator codeStringGenerator
+)
+{
+    foreach (var entity in entidades)
+    {
+        fileManager.StartNewFile(entity.Name + "Mapper.cs");
+#>
+//********************************************************
+//* Archivo auto generado para Mapper <#=entity.Name #>
+//********************************************************
+namespace <#=code.VsNamespaceSuggestion() #>
+{
+
+using System;
+using System.Collections.Generic;    
+
+public partial class <#= entity.Name#>:MapperBase
+{
+<#+ 
+        var simpleProperties = typeMapper.GetSimpleProperties(entity);
+#>
+        public <#=code.VsNamespaceSuggestion().Replace("Datos.Mapper","Dtos")#>.<#= entity.Name#> Mapper(Datos.<#= entity.Name#> Origen)
+        {
+            var Destino = new <#=code.VsNamespaceSuggestion().Replace("Datos.Mapper","Dtos")#>.<#= entity.Name#>();
+<#+
+            foreach (var edmProperty in simpleProperties)
+            {
+#>
+            Destino.<#=edmProperty#>=Origen.<#=edmProperty#>;
+<#+
+            }
+#>
+            return Destino;
+        }
+
+        public Datos.<#= entity.Name#> Mapper(<#=code.VsNamespaceSuggestion().Replace("Datos.Mapper","Dtos")#>.<#= entity.Name#> Origen)
+        {
+            var Destino = new Datos.<#= entity.Name#>();
+<#+
+            foreach (var edmProperty in simpleProperties)
+            {
+#>
+            Destino.<#=edmProperty#>=Origen.<#=edmProperty#>;
+<#+
+            }
+#>          return Destino;
+    }
+}
+}
+<#+
+    }
+}
+#>

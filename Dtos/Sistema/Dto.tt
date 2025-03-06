@@ -1,0 +1,7 @@
+﻿//SELECT *, '"'+TABLE_NAME+'",' FROM INFORMATION_SCHEMA.TABLES order by 2
+<#    
+string[]  Entidades={
+        "TipoUsuario",
+        "EstadoMulta"
+};#>
+<#@ include file="../MainTemplate.t4"#>

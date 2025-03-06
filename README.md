@@ -1,2 +1,2 @@
-# -SERVICIOS-DEL-SISTEMA
-SERVICIOS DEL SISTEMA DE PRÉSTAMO Y RECEPCIÓN DE EQUIPOS LABMANAGER
+# SERVICIOS DEL SISTEMA DE PRÉSTAMO Y RECEPCIÓN DE EQUIPOS LABMANAGER
+El sistema contiene la capa de servicios, negocio y dto´s necesarias para soportar el proceso de préstamo y recepción de equipos del sistema LabManager. Incluye el código necesario para exponer los métodos que soporten el proceso, reglas de validación y plantillas de generación de código. Los lenguajes empleados son c# para la lógica y t4 para las plantillas.
